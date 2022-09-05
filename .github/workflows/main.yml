@@ -19,7 +19,7 @@ env:
 
 jobs:
   fuzz_tests:
-    runs-on: cifuzz/builder-commons-imaging
+    runs-on: cifuzz/builders:maven
     container: cifuzz/builders:maven
     steps:
       - id: checkout
