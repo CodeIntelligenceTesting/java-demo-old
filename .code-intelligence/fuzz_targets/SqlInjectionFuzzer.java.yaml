@@ -10,7 +10,8 @@ type: "java"
 #compiler_extra_args:
 
 ## Additional arguments to pass to the fuzz target when it is executed
-#run_extra_args:
+run_extra_args:
+  - "--custom_hook_excludes=com.code_intelligence.jazzer.sanitizers.FileIOHooks"
 
 ## Options to pass to the fuzzing engine.
 #engine_options:
