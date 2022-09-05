@@ -16,7 +16,6 @@ public class SqlInjection {
     }
 
     public ResultSet getUserByUsername(String username) throws SQLException {
-        ResultSet result = conn.createStatement().executeQuery("SELECT * FROM users WHERE username='" + username + "'");
-        return result;
+        return conn.createStatement().executeQuery("SELECT * FROM users WHERE username='" + username + "'");
     }
 }
