@@ -5,9 +5,6 @@
 ## setting, lines that start with "#" are settings that can be enabled
 ## by removing the "#".
 
-description: >
-  The Json-Sanitizer is supposed to be especially reliable and secure. Click on this project to find out how our fuzzer found a weakness even there.
-
 ## The fuzz targets are built and run in Docker containers. This setting
 ## allows you to specify the Docker image that should be used for
 ## building this project. It must contain all the dependencies required
@@ -40,7 +37,8 @@ build_script: ".code-intelligence/build.sh"
 
 ## Paths to the fuzz targets to execute.
 fuzz_tests:
-  - src/main/cli/java/demo/ci/RemoteCodeExecutionFuzzer.java
+  - src/main/cli/java/demo/ci/SqlInjectionFuzzer.java
+#- src/main/cli/java/demo/ci/RemoteCodeExecutionFuzzer.java
 
 ## Paths to web app fuzz target configs.
 #web_app_target_configs:
