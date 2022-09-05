@@ -7,6 +7,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 env:
   # The fuzzing server gRPC URL.
@@ -18,7 +19,7 @@ env:
 
 jobs:
   fuzz_tests:
-    runs-on: cifuzz/builders:gradle
+    runs-on: cifuzz/builders:maven
     steps:
       - id: checkout
         name: Checkout Repository
