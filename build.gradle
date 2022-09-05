@@ -1,0 +1,20 @@
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.code-intelligence:jazzer-api:0.12.0'
+    implementation 'com.h2database:h2:2.1.214'
+}
+
+wrapper {
+    gradleVersion = "7.5"
+    distributionType = Wrapper.DistributionType.ALL
+}

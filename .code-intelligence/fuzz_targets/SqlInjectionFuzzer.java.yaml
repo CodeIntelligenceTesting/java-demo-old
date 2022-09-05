@@ -1,0 +1,32 @@
+## The fuzz target type. If unspecified, the type is deduced from the
+## extension of the fuzz target source file.
+type: "java"
+
+## If set to true, do not use the generic input corpus for this
+## fuzz target.
+#no_initial_corpus: false
+
+## Additional arguments to pass to the compiler during build
+#compiler_extra_args:
+
+## Additional arguments to pass to the fuzz target when it is executed
+run_extra_args:
+  - "--custom_hook_excludes=com.code_intelligence.jazzer.sanitizers.FileIOHooks"
+
+## Options to pass to the fuzzing engine.
+#engine_options:
+#  libfuzzer:
+#    -rss_limit_mb=4096
+
+## Environment variables to set when executing the target
+#environment:
+#  - ASAN_OPTIONS=detect_leaks=0
+
+##### This section is only for Java fuzz targets #####
+
+## Package filters to apply when instrumenting the source code.
+#instrumentation_filters:
+
+## List of jar dependencies needed by the fuzz target
+jars:
+  - "build/libs/cli-java-demo-ci-all.jar"
