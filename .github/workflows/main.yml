@@ -19,7 +19,8 @@ env:
 
 jobs:
   fuzz_tests:
-    runs-on: cifuzz/builders:maven
+    runs-on: ubuntu-latest
+    container: cifuzz/builders:maven
     steps:
       - id: checkout
         name: Checkout Repository
