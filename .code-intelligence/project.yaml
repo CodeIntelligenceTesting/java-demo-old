@@ -38,7 +38,7 @@ build_script: ".code-intelligence/build.sh"
 ## Paths to the fuzz targets to execute.
 fuzz_tests:
   - .code_intelligence/fuzz_targets/SqlInjectionFuzzer.java
-#- src/main/cli/java/demo/ci/RemoteCodeExecutionFuzzer.java
+  - .code_intelligence/fuzz_targets/RemoteCodeExecutionFuzzer.java
 
 ## Paths to web app fuzz target configs.
 #web_app_target_configs:
