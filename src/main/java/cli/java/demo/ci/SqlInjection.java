@@ -10,7 +10,7 @@ public class SqlInjection {
 
     public void connect() throws SQLException {
         JdbcDataSource ds = new JdbcDataSource();
-        ds.setURL("jdbc:h2::resource:./database.db");
+        ds.setURL("jdbc:h2:mem:database.db");
         conn = ds.getConnection();
         conn.createStatement().execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY PRIMARY KEY, username VARCHAR(50))");
     }
