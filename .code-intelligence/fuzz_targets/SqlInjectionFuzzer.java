@@ -1,6 +1,7 @@
 import com.code_intelligence.jazzer.api.FuzzedDataProvider;
 import java.sql.SQLException;
 import cli.java.demo.ci.SqlInjection;
+import com.code_intelligence.jazzer.api.FuzzerSecurityIssueHigh;
 
 public class SqlInjectionFuzzer {
 
@@ -11,7 +12,11 @@ public class SqlInjectionFuzzer {
         project.connect();
     }
 
-    public static void fuzzerTestOneInput(FuzzedDataProvider data) throws SQLException {
-        project.getUserByUsername(data.consumeString(50));
+    public static void fuzzerTestOneInput(FuzzedDataProvider data) {
+        try {
+            project.searchUsersBy(data.consumeString(100), data.consumeString(100));
+        } catch (SQLException e) {
+            throw new FuzzerSecurityIssueHigh(e.getMessage());
+        }
     }
 }
