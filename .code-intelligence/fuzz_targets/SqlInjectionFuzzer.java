@@ -1,6 +1,7 @@
 import com.code_intelligence.jazzer.api.FuzzedDataProvider;
 import java.sql.SQLException;
 import cli.java.demo.ci.SqlInjection;
+
 public class SqlInjectionFuzzer {
 
     private static SqlInjection project;
