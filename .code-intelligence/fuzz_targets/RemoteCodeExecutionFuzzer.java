@@ -1,8 +1,5 @@
 import com.code_intelligence.jazzer.api.FuzzedDataProvider;
-
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.sql.SQLException;
+import cli.java.demo.ci.RemoteCodeExecution;
 
 public class RemoteCodeExecutionFuzzer {
     public static void fuzzerTestOneInput(FuzzedDataProvider data) {
