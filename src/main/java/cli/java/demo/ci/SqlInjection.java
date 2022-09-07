@@ -17,12 +17,12 @@ public class SqlInjection {
         conn.createStatement().execute("INSERT INTO users (username, name, password) VALUES ('john', ' John', 'hello123')");
     }
 
-    public ResultSet getUserByUsername(String searchValue) throws SQLException {
-        if (searchValue.isEmpty()) {
+    public ResultSet getUserByUsername(String username) throws SQLException {
+        if (username.isEmpty()) {
             return null;
         }
 
-        String query = String.format("SELECT * FROM users WHERE username='%s'", searchValue);
+        String query = String.format("SELECT * FROM users WHERE username='%s'", username);
         return conn.createStatement().executeQuery(query);
     }
 }
