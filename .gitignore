@@ -6,6 +6,7 @@ build
 
 crash*
 Crash*
+slow*
 oom*
 .idea/
 *.tar.gz

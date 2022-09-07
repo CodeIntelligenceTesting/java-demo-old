@@ -1,7 +1,6 @@
 package cli.java.demo.ci;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.h2.jdbcx.JdbcDataSource;
@@ -18,14 +17,12 @@ public class SqlInjection {
         conn.createStatement().execute("INSERT INTO users (username, name, password) VALUES ('john', ' John', 'hello123')");
     }
 
-    public ResultSet searchUsersBy(String searchField, String searchValue) throws SQLException {
-        if (searchField.isEmpty() || searchValue.isEmpty()) {
+    public ResultSet getUserByUsername(String searchValue) throws SQLException {
+        if (searchValue.isEmpty()) {
             return null;
         }
 
-        String query = String.format("SELECT username FROM users WHERE %s LIKE ?", searchField);
-        PreparedStatement statement = conn.prepareStatement(query);
-        statement.setString(1, searchValue);
-        return statement.executeQuery();
+        String query = String.format("SELECT * FROM users WHERE username='%s'", searchValue);
+        return conn.createStatement().executeQuery(query);
     }
 }
