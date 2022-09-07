@@ -13,8 +13,6 @@ public class SqlInjectionFuzzer {
     }
 
     public static void fuzzerTestOneInput(FuzzedDataProvider data) throws SQLException {
-        try {
-            project.searchUsersBy(data.consumeString(100), data.consumeString(100));
-        } catch (SQLException ignored) {}
+        project.searchUsersBy(data.consumeString(100), data.consumeString(100));
     }
 }
