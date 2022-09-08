@@ -8,6 +8,7 @@ public class SqlInjectionFuzzer {
     private static SqlInjection project;
 
     public static void fuzzerInitialize() throws SQLException {
+        // Initialize the project and connect to the database
         project = new SqlInjection();
         project.connect();
     }

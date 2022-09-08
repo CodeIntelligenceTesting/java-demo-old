@@ -7,6 +7,8 @@ public class RemoteCodeExecutionFuzzer {
     public static void fuzzerTestOneInput(FuzzedDataProvider data) {
         try {
             RemoteCodeExecution.deserialize(new ByteArrayInputStream(data.consumeBytes(100)));
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+            // We can ignore all exception as the RCE will be caught by Jazzer
+        }
     }
 }
