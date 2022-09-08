@@ -2,13 +2,19 @@ package cli.java.demo.ci;
 import java.io.*;
 
 public class RemoteCodeExecution {
-    public class Book implements Serializable {
-        String title;
-        String author;
+    public static class Book implements Serializable {
+        private static final long serialVersionUID = 123456789L;
+        public String title;
+        public String author;
 
-        private void readObject(ObjectInputStream ois) throws IOException {
-            title = ois.readUTF();
-            author = ois.readUTF();
+        public Book(String title, String author) {
+            title = title;
+            author = author;
+        }
+
+        private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+            title = (String) ois.readObject();
+            author = (String) ois.readObject();
         }
     }
 

@@ -10,3 +10,5 @@ slow*
 oom*
 .idea/
 *.tar.gz
+*.jar
+*.MF
