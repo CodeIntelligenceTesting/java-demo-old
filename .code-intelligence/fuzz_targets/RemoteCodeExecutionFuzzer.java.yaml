@@ -10,7 +10,8 @@ type: "java"
 #compiler_extra_args:
 
 ## Additional arguments to pass to the fuzz target when it is executed
-#run_extra_args:
+run_extra_args:
+  - "--instrumentation_includes=cli.java.demo.ci.*"
 
 ## Options to pass to the fuzzing engine.
 #engine_options:
