@@ -7,3 +7,4 @@ You will be able see the two vulnerabilities that CI Fuzz detected and step into
 Inspired by:
  - SQL Injection: https://nvd.nist.gov/vuln/detail/CVE-2022-24124
  - RCE: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3253
+
