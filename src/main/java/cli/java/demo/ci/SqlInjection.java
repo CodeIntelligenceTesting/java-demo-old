@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.h2.jdbcx.JdbcDataSource;
+import java.sql.PreparedStatement;
 
 public class SqlInjection {
     private Connection conn;
@@ -24,9 +25,10 @@ public class SqlInjection {
             return null;
         }
 
-        // Using String.format instead of passing parameters through a PreparedStatement
-        // will lead to a SQL injection
-        String query = String.format("SELECT * FROM users WHERE username='%s'", username);
-        return conn.createStatement().executeQuery(query);
+        // Prepared statement will sanitize parameters and protect against SQLi
+        String query = "SELECT * FROM users WHERE username=?";
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setString(1, username);
+        return statement.executeQuery();
     }
 }
