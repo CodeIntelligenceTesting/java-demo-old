@@ -10,7 +10,10 @@ Crash*
 slow*
 oom*
 .cifuzz-findings/
+.cifuzz-build/
 .cifuzz-corpus/
+.src/test/resources/
+
 
 .idea/
 *.tar.gz
