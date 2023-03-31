@@ -4,10 +4,14 @@
 # Ignore Gradle build output directory
 build
 
+# Ignore cifuzz generated files
 crash*
 Crash*
 slow*
 oom*
+.cifuzz-findings/
+.cifuzz-corpus/
+
 .idea/
 *.tar.gz
 *.jar
