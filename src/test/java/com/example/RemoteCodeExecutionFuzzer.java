@@ -1,3 +1,5 @@
+package com.example; 
+
 import com.code_intelligence.jazzer.api.FuzzedDataProvider;
 import cli.java.demo.ci.RemoteCodeExecution;
 import java.io.ByteArrayInputStream;
