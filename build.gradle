@@ -25,7 +25,7 @@ dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     // Use Jazzer for fuzzing.
-    testImplementation 'com.code-intelligence:jazzer-junit:0.16.0'
+    testImplementation 'com.code-intelligence:jazzer-junit:0.16.1'
     // From java-demo repo
     implementation 'com.h2database:h2:2.1.214'
 
