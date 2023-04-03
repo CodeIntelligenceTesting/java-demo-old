@@ -19,3 +19,4 @@ src/test/resources/*
 *.tar.gz
 *.jar
 *.MF
+.DS_Store
