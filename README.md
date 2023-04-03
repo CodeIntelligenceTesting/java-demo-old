@@ -11,5 +11,5 @@ Inspired by:
 Example of running SqlInjectionFuzzer with a dictionary
 
 ```
-cifuzz run --interactive=false --dict=./sql.dict com.example.SqlInjectionFuzzer
+cifuzz run --dict=./sql.dict com.example.SqlInjectionFuzzer
 ```

@@ -12,7 +12,7 @@ oom*
 .cifuzz-findings/
 .cifuzz-build/
 .cifuzz-corpus/
-.src/test/resources/
+src/test/resources/*
 
 
 .idea/
