@@ -14,6 +14,7 @@ plugins {
     // From java-demo
     id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
+    id "com.code-intelligence.cifuzz" version "1.1.1"
 }
 
 repositories {
